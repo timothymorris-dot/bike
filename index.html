@@ -9,71 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Inter', sans-serif;
-      background: black; 
-      color: white;
-      overflow: hidden;
-    }
-
-    .container {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 3rem 4rem;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-      animation: fadeIn 1s ease-out;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      margin: 0 0 0.5rem 0;
-      letter-spacing: -2px;
-      background: linear-gradient(45deg, #f70069, #4b0055); 
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    p {
-      color: #aaa;
-      margin-bottom: 2rem;
-      font-size: 1rem;
-    }
-
-    #launch-btn {
-      background: linear-gradient(45deg, #f70069, #4b0055); 
-      color: white;
-      border: none;
-      padding: 12px 32px;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
-    }
-
-    #launch-btn:hover {
-      background: linear-gradient(45deg, #f70069, #4b0055); 
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <!-- External CSS with cache-buster -->
+  <link rel="stylesheet" href="main.css?v=1">
 </head>
 <body>
 
@@ -105,13 +42,14 @@
         link.href = 'go/blank.ico';
         win.document.head.appendChild(link);
 
-        
- window.location.replace("https://www.ixl.com/");
+        window.location.replace("https://www.ixl.com/");
       } catch (e) {
         alert("Please allow popups for this site, then reload.");
+      }
+    }
 
-   
     document.getElementById('launch-btn').addEventListener('click', openCloaker);
   </script>
+
 </body>
 </html>
