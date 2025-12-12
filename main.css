@@ -1,66 +1,165 @@
-/* General body styles */
+html, body {
+height: 100%;
+margin: 0;
+}
+
 body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Inter', sans-serif;
-  background: #0f0f0f; /* soft dark background */
-  color: #eee;
-  overflow: hidden;
+font-family: 'Lucida Console', monospace;
+background: #000000;
+margin: 0;
+scroll-behavior: smooth;
 }
 
-/* Glass-like container */
-.container {
-  background: rgba(30, 30, 30, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 3rem 4rem;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  animation: fadeIn 1s ease-out;
+.logo {
+display: block;
+margin: 20px auto; 
+width: 300px;
+height: 300px;
 }
 
-/* Gradient heading */
 h1 {
-  font-size: 3.5rem;
-  margin: 0 0 1rem 0;
-  letter-spacing: -1px;
-  background: linear-gradient(135deg, #ff6ec7, #6a00ff);
+text-align: center;
+font-size: 75px;
+background: linear-gradient(45deg, #f70069, #4b0055); 
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;
+z-index: 1;
+}
+h3 {
+text-align: center;
+background: linear-gradient(45deg, #f70069, #4b0055); 
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;
+z-index: 1;
+}
+
+.game-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, 200px);
+justify-content: center; /* Centers the grid if there's extra space */
+gap: 20px;
+margin-top: 30px;
+}
+
+.game-card {
+width: 200px;
+height: 200px;
+border-radius: 10px;
+overflow: hidden;
+cursor: pointer;
+transition: transform 0.3s ease;
+position: relative; /* Needed for title positioning */
+}
+
+
+
+.game-card:hover {
+transform: scale(1.03);
+}
+
+.game-card img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+transition: filter 0.3s ease;
+}
+
+.game-card:hover img {
+filter: blur(4px) brightness(0.7);
+}
+
+.game-card-title {
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 100%;
+padding: 10px;
+color: white;
+font-weight: bold;
+text-align: center;
+background: rgba(0, 0, 0, 0.5);
+backdrop-filter: blur(6px);
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+
+
+.game-card:hover .game-card-title {
+opacity: 1;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+#particles-js {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+pointer-events: none; 
+}
+
+
+
+
+#searchInput {
+display: block;
+margin: 0 auto;
+margin-top: 20px;
+padding: 12px 20px;
+width: 300px;
+font-size: 16px;
+font-family: 'Lucida Console', monospace;
+color: #fff;
+background: rgba(0, 0, 0, 0.7);
+border: 2px solid transparent;
+border-radius: 8px;
+outline: none;
+text-align: center;
+background-clip: padding-box;
+transition: border 0.3s ease, box-shadow 0.3s ease;
+box-shadow: 0 0 8px rgba(247, 0, 105, 0.4);
+}
+
+#searchInput:focus {
+border: 2px solid #f70069;
+box-shadow: 0 0 12px #f70069;
+}
+
+::-webkit-scrollbar {
+width: 12px;
+}
+
+::-webkit-scrollbar-track {
+background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+background: linear-gradient(180deg, #f70069, #4b0055);
+border: 2px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: linear-gradient(180deg, #ff147e, #6d007a);
+}
+
+ .counter {
+  text-align: center;
+  font-size: 16px;
+  background: linear-gradient(45deg, #f70069, #4b0055); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  z-index: 1;
 }
-
-/* Subtext paragraph */
-p {
-  color: #ccc;
-  margin-bottom: 2rem;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* Button styles */
-#launch-btn {
-  background: linear-gradient(135deg, #ff6ec7, #6a00ff);
-  color: white;
-  border: none;
-  padding: 12px 36px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(106, 0, 255, 0.4);
-}
-
-/* Button hover effect */
-#launch-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(106, 0, 255, 0.6);
-  background: linear-gradient(135deg, #ff85c1, #7b00ff);
-}
-
-/* Fade-in animation for container */
